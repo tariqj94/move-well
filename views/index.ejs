@@ -48,38 +48,162 @@
         </nav>
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <div class="main">
-            <h1>Welcome to movewell!</h1>
-            <h4>A curated, donation-based archive of the best workout classes available online</h4>
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <section id="congratulations" class="congratulations">
+                <div class="container mt-lg-5">
+                    <div class="row">
+                        <div class="col-12 text-center text-gray">
+                            <h1 id="welcome-title" class="h-underline-green raleway-bold">
+                                🧘 🤸‍♂️ Welcome to movewell! 🏋️‍♀️ 🎉
+                            </h1>
+                            <h5 id="welcome-msg" class="monsterrat-regular mt-3">
+                                A curated, donation-based archive of the best workout classes available online
+                            </h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+            </section>
+            <section class="search-form">
+                <div class="col-md-6">
+                    <form action="/search" method="post">
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-8 pt-0">What sort of workout would you like?</legend>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genre" id="gridRadios1" value="yoga" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Yoga
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genre" id="gridRadios2" value="hiit">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            HIIT
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genre" id="gridRadios3" value="dance">
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Dance
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genre" id="gridRadios4" value="pilates">
+                                        <label class="form-check-label" for="gridRadios4">
+                                            Pilates
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-8 pt-0">What level of difficulty?</legend>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="difficulty" id="gridRadios5" value="easy" checked>
+                                        <label class="form-check-label" for="gridRadios5">
+                                            Easy
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="difficulty" id="gridRadios6" value="intermediate">
+                                        <label class="form-check-label" for="gridRadios6">
+                                            Intermediate
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="difficulty" id="gridRadios7" value="hard">
+                                        <label class="form-check-label" for="gridRadios7">
+                                            Hard
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-8 pt-0">What gear do you have at your disposal?</legend>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="equipment" id="checkBox1" value="yoga mat" checked>
+                                        <label class="form-check-label" for="checkBox1">
+                                            Yoga mat
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="equipment" id="checkBox2" value="jump rope">
+                                        <label class="form-check-label" for="checkBox2">
+                                            Jump rope
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="equipment" id="checkBox3" value="kettlebell">
+                                        <label class="form-check-label" for="checkBox3">
+                                            Kettlebell
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="equipment" id="checkBox4" value="pull-up bar">
+                                        <label class="form-check-label" for="checkBox4">
+                                            Pull-up bar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="equipment" id="checkBox5" value="resistance bands">
+                                        <label class="form-check-label" for="checkBox5">
+                                            Resistance bands
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-8 pt-0">How long do you want to workout?</legend>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time" id="gridRadios8" value="15" checked>
+                                        <label class="form-check-label" for="gridRadios8">
+                                            15 minutes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time" id="gridRadios9" value="30">
+                                        <label class="form-check-label" for="gridRadios9">
+                                            30 minutes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time" id="gridRadios10" value="45">
+                                        <label class="form-check-label" for="checkgridRadios10Box3">
+                                            45 minutes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time" id="gridRadios11" value="60">
+                                        <label class="form-check-label" for="gridRadios11">
+                                            60 minutes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <div class="form-group row">
+                            <div class="col-sm-10" style="text-align:center;">
+                                <button type="submit" class="btn btn-info">Find me my workouts</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                <div class="col-md-6" style="width:100%;height:100;margin:auto;padding:25px;">
+                    <img style="width:100%;" src="https://www.kin.com/hs-fs/hubfs/Kin_oct_2019/images/blog/houseplants.jpg?width=1920&name=houseplants.jpg">
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </form>
+            </section>
         </div>
     	<footer id="footer">
             <a style="margin:25px;" class="btn btn-outline-info btn-block" href="javascript:void(0);" role="button">Share  <i style="margin-left:5px;" class="fas fa-share"></i></a>
