@@ -20,7 +20,7 @@ var indexRoutes = require("./routes/index")
 
 // connecting mongoDB
 mongoose.connect(
-    `mongodb+srv://tariqj94:${process.env.MONGO_PW}^@move-well-db-ybz7n.mongodb.net/test?retryWrites=true&w=majority`,
+    process.env.MONGO_CONNECTION_STRING,
     { useNewUrlParser: true, useUnifiedTopology: true },
 );
 
@@ -142,5 +142,8 @@ const expressServer = app.listen(
     process.env.IP,
     function() {
         console.log("The movewell server has started!!");
+        console.log(process.env.MONGO_CONNECTION_STRING);
+        console.log(process.env.PORT);
+        console.log(process.env.IP);
     }
 );
