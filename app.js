@@ -19,9 +19,21 @@ dotenv.config();
 var indexRoutes = require("./routes/index")
 
 // connecting mongoDB
+// mongoose.connect(
+//     process.env.MONGO_URI,
+//     { useNewUrlParser: true, useUnifiedTopology: true },
+// );
+
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
 mongoose.connect(
-    process.env.MONGO_CONNECTION_STRING,
-    { useNewUrlParser: true, useUnifiedTopology: true },
+    process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, res) {
+        if (err) {
+            console.log ('ERROR connecting to: ' + process.env.MONGO_URI + '. ' + err);
+        } else {
+            console.log ('Succeeded connected to: ' + process.env.MONGO_URI);
+        }
+    }
 );
 
 app.use(express.static(__dirname + "/public"));
@@ -142,8 +154,5 @@ const expressServer = app.listen(
     process.env.IP,
     function() {
         console.log("The movewell server has started!!");
-        console.log(process.env.MONGO_CONNECTION_STRING);
-        console.log(process.env.PORT);
-        console.log(process.env.IP);
     }
 );
