@@ -153,6 +153,6 @@ const expressServer = app.listen(
     process.env.PORT || 3000,
     process.env.IP,
     function() {
-        console.log("The movewell server has started!!");
+        console.log("The movewell server has started");
     }
 );
