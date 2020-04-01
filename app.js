@@ -8,7 +8,6 @@ var express = require("express"),
     session = require("express-session"),
     MongoStore = require("connect-mongo")(session),
     cookieParser = require("cookie-parser"),
-    validator = require("express-validator"),
     ejs = require("ejs"),
     _ = require("lodash"),
     dotenv = require("dotenv");
@@ -16,15 +15,13 @@ var express = require("express"),
 // configure environment variables
 dotenv.config();
 
-// ??weiner
-
 // requiring routes
 var indexRoutes = require("./routes/index")
 
 // connecting mongoDB
 mongoose.connect(
-    "mongodb+srv://tariqj94:8A02zm7EL%24%25^@move-well-db-ybz7n.mongodb.net/test?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
+    `mongodb+srv://tariqj94:${process.env.MONGO_PW}^@move-well-db-ybz7n.mongodb.net/test?retryWrites=true&w=majority`,
+    { useNewUrlParser: true, useUnifiedTopology: true },
 );
 
 app.use(express.static(__dirname + "/public"));
