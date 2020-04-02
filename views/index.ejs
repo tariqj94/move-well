@@ -18,7 +18,6 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -37,7 +36,7 @@
         <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     </head>
-    <body class="main-body">
+    <body class="main-body" style="background-color:mintcream;">
         <nav class="navbar navbar-expand-xl navbar-light navbar-fixed" id="nav_bar">
             <a class="navbar-brand text-info" href="/">
                 <!-- <img src="/favicon-196x196.png"> -->
@@ -59,12 +58,12 @@
                     </div>
                 </div>
             </section>
-            <section class="search-form">
+            <section class="search-form" style="background-color: white;">
                 <div class="col-md-6">
                     <form action="/search" method="post">
                         <fieldset class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-8 pt-0">What sort of workout would you like?</legend>
+                                <legend class="col-form-label col-sm-8 pt-0" style="font-weight:bold;margin:auto;">What sort of workout would you like?</legend>
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="genre" id="gridRadios1" value="yoga" checked>
@@ -96,7 +95,7 @@
                         <hr>
                         <fieldset class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-8 pt-0">What level of difficulty?</legend>
+                                <legend class="col-form-label col-sm-8 pt-0" style="font-weight:bold;margin:auto;">What level of difficulty?</legend>
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="difficulty" id="gridRadios5" value="easy" checked>
@@ -122,7 +121,7 @@
                         <hr>
                         <fieldset class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-8 pt-0">What gear do you have at your disposal?</legend>
+                                <legend class="col-form-label col-sm-8 pt-0" style="font-weight:bold;margin:auto;">What gear do you have at your disposal?</legend>
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="equipment" id="checkBox1" value="yoga mat" checked>
@@ -160,7 +159,7 @@
                         <hr>
                         <fieldset class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-8 pt-0">How long do you want to workout?</legend>
+                                <legend class="col-form-label col-sm-8 pt-0" style="font-weight:bold;margin:auto;">How long do you want to workout?</legend>
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="time" id="gridRadios8" value="15" checked>
@@ -190,7 +189,7 @@
                             </div>
                         </fieldset>
                         <hr>
-                        <div class="form-group row">
+                        <div class="form-group row" style="margin-bottom:0!important;margin-top:25px;">
                             <div class="col-sm-10" style="text-align:center;">
                                 <button type="submit" class="btn btn-info">Find me my workouts</button>
                             </div>
