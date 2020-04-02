@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 // SCHEMA SETUP
 var workoutSchema = new mongoose.Schema({
     isUnlisted: {type: Boolean, default: false},
-    name: String,
-    description: String,
-    intensity: String,
-    url: String,
-    owner: String
+    genre: String,
+    duration: Number,
+    difficulty: String,
+    gear: Array,
+    url: String
 });
 
 module.exports = mongoose.model('Workout', workoutSchema);

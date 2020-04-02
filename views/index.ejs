@@ -44,7 +44,7 @@
         </nav>
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <div class="main">
-            <section id="congratulations" class="congratulations">
+            <section class="welcome">
                 <div class="container mt-lg-5">
                     <div class="row">
                         <div class="col-12 text-center text-gray">
@@ -58,9 +58,9 @@
                     </div>
                 </div>
             </section>
-            <section class="search-form" style="background-color: white;">
+            <section class="search-form">
                 <div class="col-md-6">
-                    <form action="/search" method="post">
+                    <form id="workout-search-form">
                         <fieldset class="form-group">
                             <div class="row">
                                 <legend class="col-form-label col-sm-8 pt-0" style="font-weight:bold;margin:auto;">What sort of workout would you like?</legend>
@@ -191,16 +191,46 @@
                         <hr>
                         <div class="form-group row" style="margin-bottom:0!important;margin-top:25px;">
                             <div class="col-sm-10" style="text-align:center;">
-                                <button type="submit" class="btn btn-info">Find me my workouts</button>
+                                <button class="btn btn-info" id="workout-search-form-submit">Find me my workouts</button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6" style="width:100%;height:100;margin:auto;padding:25px;">
+                <div class="col-md-6 workouts-area">
                     <img style="width:100%;" src="https://www.kin.com/hs-fs/hubfs/Kin_oct_2019/images/blog/houseplants.jpg?width=1920&name=houseplants.jpg">
                 </div>
             </section>
         </div>
+        <script>
+            $("#workout-search-form").submit(function(event){
+                event.preventDefault();
+                $.ajax({
+                    type: "get",
+                    url: "/search",
+                    data: $(this).serialize(),
+                    success: function(dat){
+                        if(dat.status==="failure"){
+                            console.log("Oops!");
+                        }
+                        else{
+                            $(".workouts-area").html(workoutRender(dat.workouts));
+                        }
+                    }
+                })
+            })
+            function workoutRender(workouts){
+                var str="";
+                for(i=0;i<workouts.length;i++){
+                    const urlSplit = workouts[i].url.split("/watch?v=");
+                    const url = urlSplit[0] + "/embed/" + urlSplit[1];
+                    str = str +
+                    `<div class="workout">
+                        <iframe width="445" height="250" src="${url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>`
+                }
+                return str;
+            }
+        </script>
     	<footer id="footer">
             <a style="margin:25px;" class="btn btn-outline-info btn-block" href="javascript:void(0);" role="button">Share  <i style="margin-left:5px;" class="fas fa-share"></i></a>
             <a style="margin:25px;" class="btn btn-outline-info btn-block" href="https://twitter.com/TariqJahshan" role="button">Follow me <i style="margin-left:5px;" class="fab fa-twitter"></i></a>

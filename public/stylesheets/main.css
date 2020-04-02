@@ -8,13 +8,21 @@ nav {
     padding-bottom: 50px;
 }
 
-.search-form {
+.welcome{
+}
+
+.search-form{
+    display:flex;
+}
+
+#workout-search-form {
+    position:fixed;
+    background-color: white;
     border: 1px solid #efefef;
     border-radius:25px;
     padding:25px;
     margin-top:25px;
-    margin-bottom:75px;
-    display:flex;
+    margin-bottom:25px;
 }
 
 #footer {
@@ -40,5 +48,21 @@ nav {
     align-items: center;
     z-index: 20;
     padding-bottom: env(safe-area-inset-bottom);
+}
+
+.workouts-area{
+    width:100%;
+    height:100;
+    margin:auto;
+    padding:25px;
+}
+
+.workout {
+    background-color:white;
+    width: 100%;
+    padding: 10%;
+    border: 1px solid #e3e3e3;
+    border-radius: 15px;
+    margin:15px;
 }
 
