@@ -9,6 +9,10 @@ nav {
 }
 
 .welcome{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .search-form{
@@ -16,13 +20,15 @@ nav {
 }
 
 #workout-search-form {
-    position:fixed;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 12rem;
     background-color: white;
-    border: 1px solid #efefef;
-    border-radius:25px;
+    border: 1px solid #e3e3e3;
+    border-radius:15px;
     padding:25px;
-    margin-top:25px;
-    margin-bottom:25px;
+    margin-top:2rem;
+    margin-bottom:30px;
 }
 
 #footer {
@@ -33,7 +39,7 @@ nav {
     left: 0px;
     height: 60px;
     box-sizing: content-box;
-    border-top: 1px solid #efefef;
+    border-top: 1px solid #e3e3e3;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -54,15 +60,14 @@ nav {
     width:100%;
     height:100;
     margin:auto;
-    padding:25px;
+    padding:2rem;
 }
 
 .workout {
     background-color:white;
     width: 100%;
-    padding: 10%;
+    padding: 5%;
     border: 1px solid #e3e3e3;
     border-radius: 15px;
-    margin:15px;
+    margin:0 0 24px 0;
 }
-

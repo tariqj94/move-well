@@ -6,7 +6,10 @@ const Workout = require('../models/workout');
 router.get('/', (req, res) => res.render('index.ejs'));
 
 router.get('/search', (req, res) => {
-    Workout.find({}, function(err, workouts){
+    Workout.find({
+        "genre":req.query.genre,
+        "difficulty":req.query.difficulty
+    }, function(err, workouts){
         if(err){
             return res.json({
                 "status": "failure",
@@ -14,7 +17,6 @@ router.get('/search', (req, res) => {
             });
         }
         else{
-            console.log(workouts);
             return res.json({
                 "status": "success",
                 "workouts": workouts
