@@ -56,7 +56,7 @@ nav {
     padding-bottom: env(safe-area-inset-bottom);
 }
 
-.workouts-area{
+.workouts-area {
     width:100%;
     height:100;
     margin:auto;
@@ -70,4 +70,17 @@ nav {
     border: 1px solid #e3e3e3;
     border-radius: 15px;
     margin:0 0 24px 0;
+}
+
+.workout-metadata {
+    display:flex;
+    justify-content: space-evenly;
+    margin-top:1rem;
+}
+
+.workout-metadata span {
+    border: 1px solid #e3e3e3;
+    border-radius:15px;
+    font-weight:bold;
+    padding:2.5px 10.5px 4.5px 10.5px;
 }
